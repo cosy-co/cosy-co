@@ -1,10 +1,13 @@
 <script lang="ts">
-  import { Header } from '@components/layout';
+  import { Footer, Header } from '@components/layout';
 
   import '../app.css';
 </script>
 
 <div>
   <Header />
-  <slot />
+  <div class="max-w-7xl mx-auto w-11/12">
+    <slot />
+  </div>
+  <Footer />
 </div>
