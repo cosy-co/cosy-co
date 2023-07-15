@@ -1,6 +1,14 @@
+/* Write your global styles here, in PostCSS syntax */
+
+@import './styles/fonts/fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
+  font-family: 'Mukta', 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #ffffff;
 }
