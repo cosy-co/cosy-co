@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Header } from 'ui';
+  import { Header } from '@components/layout';
 
   import '../app.css';
 </script>

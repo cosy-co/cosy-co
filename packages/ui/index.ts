@@ -1,2 +1,1 @@
-export * from './components/global';
-export * from './components/layout';
+export * from './components';
