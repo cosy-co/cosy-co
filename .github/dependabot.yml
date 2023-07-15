@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/apps/web'
+    schedule:
+      interval: 'daily'
+    target-branch: 'development'
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 20
+
+  - package-ecosystem: 'npm'
+    directory: '/packages/eslint-config-custom'
+    schedule:
+      interval: 'daily'
+    target-branch: 'development'
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 20
+
+  - package-ecosystem: 'npm'
+    directory: '/packages/ui'
+    schedule:
+      interval: 'daily'
+    target-branch: 'development'
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 20
