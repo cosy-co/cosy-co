@@ -11,9 +11,12 @@
   --primary: 18, 18, 23;
   --primary-hover: 32, 32, 40;
   --primary-active: 50, 50, 63;
-  --secondary: 231, 234, 237;
-  --secondary-hover: 217, 221, 225;
-  --secondary-active: 193, 199, 206;
+  --secondary: 128, 162, 132;
+  --secondary-hover: 107, 148, 113;
+  --secondary-active: 90, 124, 96;
+  --default: 231, 234, 237;
+  --default-hover: 217, 221, 225;
+  --default-active: 193, 199, 206;
   /* Text */
   --text: 18, 18, 23;
   --text-primary: 55, 65, 81;

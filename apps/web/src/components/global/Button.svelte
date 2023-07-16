@@ -4,13 +4,20 @@
 
   export let style: Style = 'primary';
   export let size: Size = 'md';
+  export let outline = false;
 
-  const baseStyle = `font-medium rounded-lg border text-sm ${
+  const baseStyle = `font-semibold rounded-md border text-sm ${
     size === 'sm' ? 'text-sm' : size === 'md' ? 'text-base px-5 py-2' : 'px-7 py-3'
   }`;
 </script>
 
-{#if style === 'primary'}
+{#if style === 'primary' && outline}
+  <button
+    class={`${baseStyle} hover:bg-primary/10 active:bg-primary/20 text-primary border-primary transition duration-200`}
+  >
+    <slot />
+  </button>
+{:else if style === 'primary' && !outline}
   <button
     class={`${baseStyle} bg-primary hover:bg-primary-hover active:bg-primary-active text-text-button border-transparent transition duration-200`}
   >
