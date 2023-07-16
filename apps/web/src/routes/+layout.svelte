@@ -6,7 +6,7 @@
 
 <div>
   <Header />
-  <div class="max-w-7xl mx-auto w-11/12">
+  <div class="min-h-[50vh]">
     <slot />
   </div>
   <Footer />

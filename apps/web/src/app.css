@@ -11,9 +11,12 @@
   --primary: 18, 18, 23;
   --primary-hover: 32, 32, 40;
   --primary-active: 50, 50, 63;
-  --secondary: 231, 234, 237;
-  --secondary-hover: 217, 221, 225;
-  --secondary-active: 193, 199, 206;
+  --secondary: 128, 162, 132;
+  --secondary-hover: 107, 148, 113;
+  --secondary-active: 90, 124, 96;
+  --default: 231, 234, 237;
+  --default-hover: 217, 221, 225;
+  --default-active: 193, 199, 206;
   /* Text */
   --text: 18, 18, 23;
   --text-primary: 55, 65, 81;
@@ -66,6 +69,102 @@ body {
   overflow-x: clip;
   word-wrap: break-word;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+*:focus {
+  @apply focus:outline-none;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
+}
+
+.no-select::selection {
+  @apply bg-transparent text-transparent;
+}
+
+.yes-select {
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  -o-user-select: text;
+}
+
+hover-thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.hover-thin-scroll:hover {
+  scrollbar-color: auto;
+}
+
+.hover-thin-scroll::-webkit-scrollbar {
+  @apply hidden w-[3px];
+}
+
+.hover-thin-scroll:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.hidden-scrollbar {
+  scrollbar-width: none;
+  scrollbar-color: rgba(0, 0, 0, 0);
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.scroll-bar {
+  scrollbar-color: rgba(0, 0, 0, 0) rgba(255, 255, 255, 0);
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  @apply relative overflow-x-auto overflow-y-hidden whitespace-nowrap;
+}
+
+.scroll-bar:hover {
+  scrollbar-color: rgba(0, 0, 0, 0) rgba(255, 255, 255, 0);
+}
+
+.scroll-bar::-webkit-scrollbar {
+  @apply w-[5px] h-[5px];
+}
+
+/* The grabbable scrollbar button  */
+.scroll-bar:hover::-webkit-scrollbar-thumb {
+  @apply bg-[rgba(0,0,0,0)] rounded-[30px];
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0);
+}
+
+/* The vertical scrollbar background */
+.scroll-bar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
 }
 
 .link {
@@ -75,4 +174,26 @@ body {
 
 .link:hover {
   text-decoration: underline;
+}
+
+input[type='number'] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Accessibility */
+a,
+button {
+  @apply focus-visible:transition-none focus-visible:ring;
+}
+
+/* Code */
+.code {
+  @apply text-[14px] py-0.5 px-1.5 mx-0 rounded-sm bg-default-hover text-text font-semibold cursor-auto transition duration-200;
 }

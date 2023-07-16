@@ -39,6 +39,21 @@ const config = {
           ? `rgba(var(--secondary-active), ${opacityValue})`
           : `rgba(var(--secondary-active))`;
       },
+      default: ({ opacityValue }) => {
+        return opacityValue !== undefined
+          ? `rgba(var(--default), ${opacityValue})`
+          : `rgba(var(--default))`;
+      },
+      'default-hover': ({ opacityValue }) => {
+        return opacityValue !== undefined
+          ? `rgba(var(--default-hover), ${opacityValue})`
+          : `rgba(var(--default-hover))`;
+      },
+      'default-active': ({ opacityValue }) => {
+        return opacityValue !== undefined
+          ? `rgba(var(--default-active), ${opacityValue})`
+          : `rgba(var(--default-active))`;
+      },
 
       // Text
       text: ({ opacityValue }) => {

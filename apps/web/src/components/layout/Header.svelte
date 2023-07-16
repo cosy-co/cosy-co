@@ -20,24 +20,28 @@
 </script>
 
 <div
-  class="h-20 left-0 w-full top-0 border-header-border border-b bg-header text-header-text shadow-sm"
+  class="max-h-20 min-h-20 left-0 w-full top-0 border-header-border border-b bg-header text-header-text shadow-sm"
 >
-  <div class="flex my-2.5 justify-between max-w-7xl mx-auto w-11/12">
+  <div class="flex py-5 justify-between max-w-7xl mx-auto w-11/12">
     <!-- Links -->
     <div class="flex">
       {#each links as link}
         <a
           href={link.href}
-          class={`block px-2 py-3 ${$page.route.id === link.href ? 'font-bold' : 'font-medium'}`}
-          >{link.name}</a
+          class={`block mr-8 py-2 text-base ${
+            $page.route.id === link.href ? 'font-extrabold' : 'font-medium text-text-secondary'
+          }`}>{link.name}</a
         >
       {/each}
     </div>
 
     <!-- Title -->
-    <a href="/" class="font-bold text-3xl">Cozy Co</a>
+    <a href="/" class="flex absolute left-1/2 -translate-x-1/2">
+      <img src="/logo.png" alt="Logo" class="h-10 w-10 rounded-lg" />
+      <h1 class="font-bold text-3xl ml-3 mt-0.5">Cozy Co</h1>
+    </a>
 
     <!-- Contact -->
-    <a href="/contact"><Button>Contact</Button></a>
+    <a href="/contact"><Button outline={true}>Contact</Button></a>
   </div>
 </div>
