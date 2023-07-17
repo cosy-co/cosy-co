@@ -14,8 +14,8 @@
   </h1>
 
   <img
-    src="/about/about-banner.jpg"
-    alt="About banner"
+    src="/about/cover.jpg"
+    alt="About cover"
     class=" object-cover w-full max-h-80"
   />
 

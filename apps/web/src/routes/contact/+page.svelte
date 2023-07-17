@@ -3,7 +3,7 @@
   import Icon from '@iconify/svelte';
 
   const baseInputStyle =
-    'block w-full p-3 rounded-md focus:ring transition duration-200 border border-border focus:border-secondary ring-secondary/40 hover:border-secondary/75';
+    'block w-full bg-black/30 hover:bg-black/30 focus:bg-black/50 border-transparent p-3 rounded-md focus:ring text-white transition duration-200 border border-border focus:border-secondary ring-secondary/40';
 
   const onSubmit = (event: Event) => {
     event.preventDefault();
@@ -14,20 +14,20 @@
 
 <Meta title="Contact Us" />
 
-<div class="2xl:py-32 lg:py-20 p-0 bg-default">
-  <div class="max-w-5xl mx-auto lg:w-11/12 md:flex lg:rounded-3xl lg:shadow-lg">
+<div class="2xl:py-32 lg:py-20 xl:py-32 p-0 bg-[url(/contact/background.jpg)]">
+  <div class="max-w-5xl mx-auto lg:w-11/12 md:flex lg:rounded-3xl">
     <div
-      class="md:w-1/3 px-10 md:px-5 lg:px-10 py-10 md:py-20 bg-secondary lg:rounded-l-lg text-white"
+      class="md:w-1/3 px-10 md:px-5 lg:px-10 py-10 md:py-20 bg-black/40 backdrop-blur-md lg:rounded-l-md text-white"
     >
       <h3 class="font-bold text-2xl">Contact Us</h3>
       <div class="mt-5 flex">
-        <div class="rounded-3xl bg-white/20 p-2 mr-3 h-9 w-9">
+        <div class="rounded-3xl bg-black/30 p-2 mr-3 h-9 w-9">
           <Icon icon="mdi:phone" class="w-5 h-5" />
         </div>
         <p class="mt-1.5"><b>Phone:</b> +64 27 000 000</p>
       </div>
       <div class="mt-5 flex">
-        <div class="rounded-3xl bg-white/20 p-2 mr-3 h-9 w-9">
+        <div class="rounded-3xl bg-black/30 p-2 mr-3 h-9 w-9">
           <Icon icon="eva:email-outline" class="h-5 w-5" />
         </div>
         <p class="mt-1.5">
@@ -38,7 +38,7 @@
         </p>
       </div>
       <div class="mt-5 flex">
-        <div class="rounded-3xl bg-white/20 p-2 mr-3 h-9 w-9">
+        <div class="rounded-3xl bg-black/30 p-2 mr-3 h-9 w-9">
           <Icon icon="gg:website" class="h-5 w-5" />
         </div>
         <p class="mt-1.5">
@@ -47,8 +47,10 @@
       </div>
     </div>
 
-    <div class="md:w-2/3 px-10 py-20 lg:rounded-r-lg bg-background">
-      <h3 class="font-bold text-2xl">Get In Touch</h3>
+    <div
+      class="md:w-2/3 px-10 pt-20 pb-16 lg:rounded-r-md bg-black/20 backdrop-blur-md"
+    >
+      <h3 class="font-bold text-white text-2xl">Get In Touch</h3>
       <form class="mt-5" on:submit={onSubmit}>
         <input
           type="text"
@@ -78,12 +80,13 @@
           placeholder="Your message..."
           maxlength="500"
           minlength="10"
+          rows="5"
           required={true}
           class={`${baseInputStyle} mt-5`}
         />
 
         <div class="mt-8">
-          <Button size="lg"
+          <Button size="lg" style="success"
             >Send Message <Icon
               icon="iconoir:arrow-tr"
               class="inline-block h-5 w-5 -mt-0.5 ml-1"
