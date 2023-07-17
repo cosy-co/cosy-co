@@ -3,7 +3,7 @@
   import Icon from '@iconify/svelte';
 
   const baseInputStyle =
-    'block w-full p-3 rounded-md focus:ring transition duration-200 border border-border focus:border-primary/75 ring-primary/30 hover:border-primary/50';
+    'block w-full p-3 rounded-md focus:ring transition duration-200 border border-border focus:border-secondary ring-secondary/40 hover:border-secondary/75';
 
   const onSubmit = (event: Event) => {
     event.preventDefault();
@@ -22,7 +22,7 @@
       <h3 class="font-bold text-2xl">Contact Us</h3>
       <div class="mt-5 flex">
         <div class="rounded-3xl bg-white/20 p-2 mr-3">
-          <Icon icon="mdi:phone" class="h-5 w-5" />
+          <Icon icon="mdi:phone" class="min-h-5 min-w-5 max-w-5 max-h-5" />
         </div>
         <p class="mt-1.5"><b>Phone:</b> +64 27 000 000</p>
       </div>
@@ -32,18 +32,24 @@
         </div>
         <p class="mt-1.5">
           <b>Email:</b>
-          <a href="mailto:business@cozyco.nz" class="hover:underline">business@cozyco.nz</a>
+          <a href="mailto:business@cozyco.nz" class="hover:underline"
+            >business@cozyco.nz</a
+          >
         </p>
       </div>
       <div class="mt-5 flex">
         <div class="rounded-3xl bg-white/20 p-2 mr-3">
           <Icon icon="gg:website" class="h-5 w-5" />
         </div>
-        <p class="mt-1.5"><b>Website:</b> <a href="/" class="hover:underline">cozyco.nz</a></p>
+        <p class="mt-1.5">
+          <b>Website:</b> <a href="/" class="hover:underline">cozyco.nz</a>
+        </p>
       </div>
     </div>
 
-    <div class="w-2/3 px-10 py-20 lg:border border-border lg:rounded-r-3xl bg-background">
+    <div
+      class="w-2/3 px-10 py-20 lg:border border-border lg:rounded-r-3xl bg-background"
+    >
       <h3 class="font-bold text-2xl">Get In Touch</h3>
       <form class="mt-5" on:submit={onSubmit}>
         <input

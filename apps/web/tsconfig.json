@@ -12,9 +12,7 @@
     "ignoreDeprecations": "5.0",
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
+      "@components/*": ["src/components/*"]
     }
   }
 }
