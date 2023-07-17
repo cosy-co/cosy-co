@@ -21,44 +21,48 @@
 
   <div class="mt-8 sm:mt-16 text-sm">
     <p class="my-5">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, amet.
-      Tenetur libero omnis ex velit iusto molestiae exercitationem est quia
-      autem illum facere, facilis natus eligendi ullam quam deserunt magni.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, amet.
-      Tenetur libero omnis ex velit iusto molestiae exercitationem est quia
-      autem illum facere, facilis natus eligendi ullam quam deserunt magni.
+      Cozy Co is a unique business venture born out of our desire to create
+      products that enhance comfort and well-being. With our flagship product,
+      the versatile wheat bags, we strive to provide warmth and relief to
+      individuals seeking comfort during chilly winters or relief from aching
+      muscles.
     </p>
     <p class="my-5">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, amet.
-      Tenetur libero omnis ex velit iusto molestiae exercitationem est quia
-      autem illum facere, facilis natus eligendi ullam quam deserunt magni.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, amet.
-      Tenetur libero omnis ex velit iusto molestiae exercitationem est quia
-      autem illum facere, facilis natus eligendi ullam quam deserunt magni.
+      At Cozy Co, we understand the importance of finding solace in simple yet
+      effective solutions. Our wheat bags are designed to be the perfect
+      companion for anyone seeking a cozy and soothing experience. Whether
+      you're looking to warm up during a frosty evening or ease tension and
+      discomfort, our wheat bags are here to provide you with the warmth and
+      comfort you need.
     </p>
     <p class="my-5">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, amet.
-      Tenetur libero omnis ex velit iusto molestiae exercitationem est quia
-      autem illum facere, facilis natus eligendi ullam quam deserunt magni.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, amet.
-      Tenetur libero omnis ex velit iusto molestiae exercitationem est quia
-      autem illum facere, facilis natus eligendi ullam quam deserunt magni.
+      Why choose Cozy Co wheat bags? Our commitment to quality and attention to
+      detail sets us apart. We source the finest organic wheat grains, ensuring
+      that our bags retain heat for extended periods. Each bag is carefully
+      handcrafted with love, using soft and durable fabrics that are gentle
+      against the skin. Our products are created with your comfort and safety in
+      mind, so you can rely on Cozy Co to deliver a truly cozy experience.
     </p>
     <p class="my-5">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, amet.
-      Tenetur libero omnis ex velit iusto molestiae exercitationem est quia
-      autem illum facere, facilis natus eligendi ullam quam deserunt magni.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, amet.
-      Tenetur libero omnis ex velit iusto molestiae exercitationem est quia
-      autem illum facere, facilis natus eligendi ullam quam deserunt magni.
+      Located in the picturesque region of Canterbury, our operations are deeply
+      rooted in the heart of New Zealand. We take immense pride in supporting
+      our local community by offering our wheat bags to those seeking warmth and
+      relaxation. We believe that everyone deserves a moment of respite, and we
+      strive to make our products accessible to as many people as possible.
     </p>
     <p class="my-5">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, amet.
-      Tenetur libero omnis ex velit iusto molestiae exercitationem est quia
-      autem illum facere, facilis natus eligendi ullam quam deserunt magni.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, amet.
-      Tenetur libero omnis ex velit iusto molestiae exercitationem est quia
-      autem illum facere, facilis natus eligendi ullam quam deserunt magni.
+      As a small business, we understand the value of customer satisfaction.
+      Your comfort and happiness are our top priorities. We are always eager to
+      hear from you, whether it's feedback, suggestions, or inquiries. Our
+      dedicated customer support team is ready to assist you in any way
+      possible, ensuring that your experience with Cozy Co is nothing short of
+      exceptional.
     </p>
+    <p class="my-5">
+      Thank you for joining us on this cozy journey. We invite you to explore
+      our range of wheat bags and discover the warmth and comfort that awaits
+      you. Cozy up with Cozy Co and experience the true essence of tranquility.
+    </p>
+    <p class="my-5">Stay cozy,<br />The Cozy Co Team</p>
   </div>
 </div>
