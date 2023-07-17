@@ -32,7 +32,7 @@
 
 <!-- Background overlay -->
 <div
-  class={`fixed top-0 left-0 h-screen w-screen md:hidden bg-black/60 z-40 transition-[visibility] duration-500 ${
+  class={`fixed top-0 left-0 h-screen w-screen md:hidden bg-black/60 z-40 backdrop-blur-sm transition-all duration-500 ${
     !open && 'invisible opacity-0'
   }`}
   on:click={closeMenu}
@@ -66,7 +66,7 @@
         class={`block relative rounded-md py-3 px-5 font-medium ${
           $page.route.id === link.href
             ? 'bg-primary text-white my-2'
-            : 'text-text-secondary'
+            : 'text-text-secondary hover:bg-default-hover active:bg-default-active transition duration-200'
         }`}
         on:click={closeMenu}
       >
