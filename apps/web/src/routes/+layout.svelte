@@ -6,7 +6,7 @@
 
 <div>
   <Header />
-  <div class="min-h-[50vh]">
+  <div class="min-h-[50vh] relative">
     <slot />
   </div>
   <Footer />

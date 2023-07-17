@@ -25,8 +25,10 @@
   ];
 </script>
 
+<div class="relative h-20 w-full block" />
+
 <div
-  class="max-h-20 min-h-20 left-0 w-full top-0 border-header-border border-b bg-header text-header-text shadow-sm"
+  class="max-h-20 min-h-20 left-0 z-40 w-full fixed top-0 border-header-border border-b bg-header text-header-text shadow-sm"
 >
   <div class="flex py-5 justify-between max-w-7xl mx-auto w-11/12">
     <!-- Links -->
