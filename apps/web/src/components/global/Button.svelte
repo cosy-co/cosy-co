@@ -1,5 +1,11 @@
 <script lang="ts">
-  type Style = 'primary' | 'secondary' | 'default' | 'danger' | 'success' | 'warning';
+  type Style =
+    | 'primary'
+    | 'secondary'
+    | 'default'
+    | 'danger'
+    | 'success'
+    | 'warning';
   type Size = 'sm' | 'md' | 'lg';
 
   export let style: Style = 'primary';
@@ -7,7 +13,11 @@
   export let outline = false;
 
   const baseStyle = `font-semibold rounded-md border text-sm transition duration-200 ${
-    size === 'sm' ? 'text-sm' : size === 'md' ? 'text-base px-5 py-2' : 'px-7 py-3'
+    size === 'sm'
+      ? 'text-sm'
+      : size === 'md'
+      ? 'text-base px-5 py-2'
+      : 'px-7 py-3'
   }`;
 </script>
 
@@ -37,13 +47,13 @@
   </button>
 {:else if style === 'default' && outline}
   <button
-    class={`${baseStyle} hover:bg-default/10 active:bg-default/20 text-default border-default`}
+    class={`${baseStyle} hover:bg-default/10 active:bg-default/20 text-text border-default`}
   >
     <slot />
   </button>
 {:else if style === 'default' && !outline}
   <button
-    class={`${baseStyle} bg-default hover:bg-default-hover active:bg-default-active text-text-button border-transparent`}
+    class={`${baseStyle} bg-default hover:bg-default-hover active:bg-default-active text-text border-transparent`}
   >
     <slot />
   </button>
@@ -72,7 +82,9 @@
     <slot />
   </button>
 {:else if style === 'danger' && outline}
-  <button class={`${baseStyle} hover:bg-danger/10 active:bg-danger/20 text-danger border-danger`}>
+  <button
+    class={`${baseStyle} hover:bg-danger/10 active:bg-danger/20 text-danger border-danger`}
+  >
     <slot />
   </button>
 {:else if style === 'danger' && !outline}

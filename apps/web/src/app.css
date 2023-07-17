@@ -197,3 +197,12 @@ button {
 .code {
   @apply text-[14px] py-0.5 px-1.5 mx-0 rounded-sm bg-default-hover text-text font-semibold cursor-auto transition duration-200;
 }
+
+/* Splide */
+.splide__pagination__page {
+  background: rgba(var(--primary), 0.3);
+}
+
+.splide__pagination__page.is-active {
+  background: rgba(var(--primary), 0.4);
+}
