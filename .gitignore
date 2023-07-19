@@ -28,3 +28,7 @@ yarn-error.log*
 
 # turbo
 .turbo
+
+nginx.conf
+cosyco.crt
+cosyco.key
