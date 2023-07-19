@@ -1,5 +1,5 @@
 {
-  "name": "cozy-co",
+  "name": "cosy-co",
   "private": true,
   "scripts": {
     "build": "turbo run build",

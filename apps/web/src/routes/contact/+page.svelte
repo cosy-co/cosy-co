@@ -32,8 +32,8 @@
         </div>
         <p class="mt-1.5">
           <b>Email:</b>
-          <a href="mailto:business@cozyco.nz" class="hover:underline"
-            >business@cozyco.nz</a
+          <a href="mailto:business@cosyco.nz" class="hover:underline"
+            >business@cosyco.nz</a
           >
         </p>
       </div>
@@ -42,7 +42,7 @@
           <Icon icon="gg:website" class="h-5 w-5" />
         </div>
         <p class="mt-1.5">
-          <b>Website:</b> <a href="/" class="hover:underline">cozyco.nz</a>
+          <b>Website:</b> <a href="/" class="hover:underline">cosyco.nz</a>
         </p>
       </div>
     </div>

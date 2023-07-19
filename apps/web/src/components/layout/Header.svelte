@@ -51,7 +51,7 @@
     <!-- Title -->
     <a href="/" class="flex absolute left-1/2 -translate-x-1/2">
       <img src="/logo.png" alt="Logo" class="h-10 w-10 rounded-lg" />
-      <h1 class="font-bold text-3xl ml-3 mt-0.5 hidden md:block">Cozy Co</h1>
+      <h1 class="font-bold text-3xl ml-3 mt-0.5 hidden md:block">Cosy Co</h1>
     </a>
 
     <!-- Contact -->

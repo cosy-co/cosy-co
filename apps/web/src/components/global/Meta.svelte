@@ -1,7 +1,7 @@
 <script lang="ts">
-  export let websiteTitle = 'Cozy Co';
-  export let title = 'Cozy Co';
-  export let description = 'Cozy Co is a company that makes cozy things.';
+  export let websiteTitle = 'Cosy Co';
+  export let title = 'Cosy Co';
+  export let description = 'Cosy Co is a company that makes cosy things.';
 </script>
 
 <head>

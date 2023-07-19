@@ -32,7 +32,7 @@ importers:
 
   apps/web:
     dependencies:
-      '@cozy-co/ui':
+      '@cosy-co/ui':
         specifier: ^0.0.0
         version: link:../../packages/ui
       '@splidejs/svelte-splide':
