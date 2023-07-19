@@ -48,7 +48,7 @@
 >
   <!-- Menu header -->
   <div class="h-16 px-5 border-b border-border flex py-3 justify-between">
-    <a href="/"><h1 class="font-bold text-xl py-2">Cozy Co</h1></a>
+    <a href="/"><h1 class="font-bold text-xl py-2">Cosy Co</h1></a>
 
     <button
       class="p-2 rounded-3xl hover:bg-default-hover active:bg-default-active h-10 w-10"

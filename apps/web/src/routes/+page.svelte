@@ -15,21 +15,21 @@
       name: 'Sarah Thompson',
       title: 'Fitness Enthusiast',
       avatar: '/home/feedback-1.jpg',
-      content: `I absolutely love Cozy Co's Wheat Bag! It's become my go-to for relieving muscle soreness after workouts. The natural warmth and soft fabric provide instant comfort, and it's so easy to use. Highly recommended.`,
+      content: `I absolutely love Cosy Co's Wheat Bag! It's become my go-to for relieving muscle soreness after workouts. The natural warmth and soft fabric provide instant comfort, and it's so easy to use. Highly recommended.`,
       rating: 4,
     },
     {
       name: 'Mark Davis',
       title: 'Personal Trainer',
       avatar: '/home/feedback-2.jpg',
-      content: `Cozy Co's Wheat Bag has been a game-changer for my chronic back pain. The heat therapy works wonders, and the quality of the product is impressive. Thank you, Cozy Co!`,
+      content: `Cosy Co's Wheat Bag has been a game-changer for my chronic back pain. The heat therapy works wonders, and the quality of the product is impressive. Thank you, Cosy Co!`,
       rating: 5,
     },
     {
       name: 'Emily Johnson',
       title: 'Happy Customer',
       avatar: '/home/feedback-3.jpg',
-      content: `I received Cozy Co's Wheat Bag as a gift, and it has quickly become my favorite relaxation companion. The soothing warmth is incredibly comforting, especially during chilly evenings. I can't thank Cozy Co enough for this delightful product!`,
+      content: `I received Cosy Co's Wheat Bag as a gift, and it has quickly become my favorite relaxation companion. The soothing warmth is incredibly comforting, especially during chilly evenings. I can't thank Cosy Co enough for this delightful product!`,
       rating: 4,
     },
   ];
@@ -50,7 +50,7 @@
   <div class="max-w-7xl mx-auto w-10/12 text-white drop-shadow-lg">
     <div class="max-w-2xl relative">
       <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl">
-        Embrace the Warmth,<br />Embrace Cozy Co!
+        Embrace the Warmth,<br />Embrace Cosy Co!
       </h1>
       <p class="lg:text-lg my-10">
         Where comfort meets self-care. Discover our premium wheat bags and
