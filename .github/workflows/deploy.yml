@@ -13,32 +13,32 @@ jobs:
     name: Build Docker image
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Build the Docker image
 
         run: |
           touch .env 
-          docker-compose -f docker-compose.production.yml build  --no-cache --force-rm
+          docker-compose -f docker-compose.production.yml build frontend --no-cache --force-rm
 
   test:
     name: Test Docker image
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Test the Docker image
         run: |
           touch .env
-          docker-compose -f docker-compose.production.yml up -d
+          docker-compose -f docker-compose.production.yml up frontend -d
 
   push_to_registry:
     name: Publish - Docker Hub
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
@@ -59,7 +59,8 @@ jobs:
       - name: Publish to Docker Hub
         uses: docker/build-push-action@v4
         with:
-          context: '{{defaultContext}}'
+          context: .
+          file: ./docker/production/Dockerfile.web
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
