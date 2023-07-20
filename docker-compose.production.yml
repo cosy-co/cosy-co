@@ -17,14 +17,10 @@ services:
 
   frontend:
     container_name: frontend
-    build:
-      context: .
-      dockerfile: ./docker/production/Dockerfile.web
+    image: slekup/cosy-co:latest
     env_file:
       - .env
     restart: always
-    environment:
-      NODE_ENV: production
     ports:
       - '3000:3000'
     # depends_on:
