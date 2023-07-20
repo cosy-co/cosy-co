@@ -4,10 +4,6 @@ on:
   push:
     branches: ['main']
 
-env:
-  REGISTERY: docker.io
-  IMAGE_NAME: ${{ github.repository }}
-
 jobs:
   build:
     name: Build Docker image
@@ -54,7 +50,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTERY }}/${{ env.IMAGE_NAME }}
+          images: docker.io/slekup/cosy-co
 
       - name: Publish to Docker Hub
         uses: docker/build-push-action@v4
