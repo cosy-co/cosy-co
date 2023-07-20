@@ -16,8 +16,8 @@ ensureDirectories([['/tmp'], ['/tmp/logs'], [`/tmp/logs/${config.logFolder}`]]);
 databaseConnection();
 
 const api = new Api({
-  url: config.API_URL,
-  port: parseInt(config.env.PORT, 10) || 5000,
+  url: config.env.API_URL,
+  port: parseInt(config.env.API_HTTP_PORT, 10) || 5000,
   path: '/api',
 });
 
@@ -32,7 +32,7 @@ api.addMiddleware((req, res, next) => {
 });
 
 api.addMiddleware((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', config.WEBSITE_URL);
+  res.header('Access-Control-Allow-Origin', config.env.WEBSITE_URL);
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept, Authorization'
@@ -53,7 +53,7 @@ api.addMiddleware(hpp());
 
 api.addMiddleware(
   cors({
-    origin: [config.WEBSITE_URL, 'http://frontend:3000'],
+    origin: [config.env.WEBSITE_URL],
     credentials: true,
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],

@@ -22,7 +22,7 @@
     "emitDecoratorMetadata": false,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "importHelpers": true,
+    "importHelpers": false,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "removeComments": true,

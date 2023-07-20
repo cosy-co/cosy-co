@@ -19,12 +19,6 @@ class Config {
   // Environment
   public env = env;
   public debug = env.DEBUG === 'true';
-  public API_URL = `${
-    env.NODE_ENV === 'production' ? env.API_URL_PROD : env.API_URL_DEV
-  }`;
-  public WEBSITE_URL = `${
-    env.NODE_ENV === 'production' ? env.WEBSITE_URL_PROD : env.WEBSITE_URL_DEV
-  }`;
 
   /**
    * Check if the bot is in development mode.
