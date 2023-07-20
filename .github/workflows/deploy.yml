@@ -20,7 +20,7 @@ jobs:
 
         run: |
           touch .env 
-          docker-compose -f docker-compose.production.yml build frontend --no-cache --force-rm
+          docker-compose -f docker-compose.production.yml build --no-cache --force-rm frontend
 
   test:
     name: Test Docker image
@@ -32,7 +32,7 @@ jobs:
       - name: Test the Docker image
         run: |
           touch .env
-          docker-compose -f docker-compose.production.yml up frontend -d
+          docker-compose -f docker-compose.production.yml up -d frontend
 
   push_to_registry:
     name: Publish - Docker Hub

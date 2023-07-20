@@ -2,7 +2,7 @@
   import { Button, Feedback, Meta } from '@components/index';
   import Icon from '@iconify/svelte';
 
-  interface Feedback {
+  interface IFeedback {
     name: string;
     title: string;
     avatar: string;
@@ -10,7 +10,7 @@
     rating: number;
   }
 
-  const feedbackData: Feedback[] = [
+  const feedbackData: IFeedback[] = [
     {
       name: 'Sarah Thompson',
       title: 'Fitness Enthusiast',
