@@ -116,7 +116,7 @@ importers:
         specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.26)
       eslint-config-custom:
-        specifier: 0.0.0
+        specifier: '*'
         version: link:../../packages/eslint-config-custom
       postcss:
         specifier: ^8.4.26
