@@ -34,7 +34,6 @@ RUN pnpm dlx turbo run build --filter=web
 FROM base as runner
 # Set the working directory to /app
 WORKDIR /app
-ENV NODE_ENV production
 # Don't run production as root
 # Add a new group called nodejs, with GID 1001
 RUN addgroup -g 1001 -S nodejs
