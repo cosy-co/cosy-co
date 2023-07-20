@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Deploy
 
 on:
   push:
@@ -10,6 +10,7 @@ env:
 
 jobs:
   build:
+    name: Build Docker image
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -22,13 +23,16 @@ jobs:
           docker-compose -f docker-compose.production.yml build  --no-cache --force-rm
 
   test:
+    name: Test Docker image
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
 
       - name: Test the Docker image
-        run: docker-compose -f docker-compose.production.yml up -d
+        run: |
+          touch .env
+          docker-compose -f docker-compose.production.yml up -d
 
   push_to_registry:
     name: Publish - Docker Hub
