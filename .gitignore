@@ -34,3 +34,5 @@ yarn-error.log*
 nginx.conf
 cosyco.crt
 cosyco.key
+
+dist/
