@@ -26,10 +26,11 @@
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "removeComments": true,
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "../../environment.d.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src", "../../environment.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
