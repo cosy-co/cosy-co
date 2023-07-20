@@ -4,12 +4,10 @@ services:
     container_name: backend
     build:
       context: .
-      dockerfile: ./apps/api/Dockerfile
+      dockerfile: ./docker/production/Dockerfile.api
     env_file:
       - .env
     restart: always
-    environment:
-      NODE_ENV: production
     ports:
       - '5000:5000'
     networks:
