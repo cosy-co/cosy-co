@@ -3,16 +3,23 @@
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-turbo": "latest",
-    "eslint-plugin-svelte3": "^4.0.0"
-  },
+  "dependencies": {},
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.22.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0"
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-turbo": "latest",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsdoc": "^46.4.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "eslint-plugin-tsdoc": "^0.2.17"
   }
 }

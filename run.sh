@@ -1,27 +1,43 @@
 #!/bin/bash
 
-# Update Docker images
+# Function to update Docker images
 function update() {
   echo "Updating docker services..."
-  docker-compose -f docker-compose.production.yml stop
+  docker-compose -f "$COMPOSE_FILE" stop
   git pull
-  docker-compose -f docker-compose.production.yml up --build -d
+  docker-compose -f "$COMPOSE_FILE" up --build -d
 }
 
-# Restart Docker containers
+# Function to restart Docker containers
 function restart() {
   echo "Restarting docker services..."
-  docker-compose -f docker-compose.production.yml restart
+  docker-compose -f "$COMPOSE_FILE" restart
 }
 
-# View Docker container logs
+# Function to view Docker container logs
 function logs() {
   echo "Showing logs for docker services..."
-  docker-compose -f docker-compose.production.yml logs -t -f
+  docker-compose -f "$COMPOSE_FILE" logs -t -f
 }
 
-# Handle command line arguments
-case "$1" in
+# Check if the environment argument is specified
+if [ -z "$1" ]; then
+  echo "Usage: ./run.sh [prod|dev] [update|restart|logs]"
+  exit 1
+fi
+
+# Set the environment file based on the argument
+if [ "$1" == "prod" ]; then
+  COMPOSE_FILE="docker-compose.production.yml"
+elif [ "$1" == "dev" ]; then
+  COMPOSE_FILE="docker-compose.development.yml"  # Adjust the filename for development, if necessary
+else
+  echo "Unknown environment '$1'. Please use 'prod' or 'dev'."
+  exit 1
+fi
+
+# Handle command-line arguments
+case "$2" in
   "update")
     update
     ;;
@@ -32,7 +48,7 @@ case "$1" in
     logs
     ;;
   *)
-    echo "Usage: ./run.sh [update|restart|logs]"
+    echo "Usage: ./run.sh [prod|dev] [update|restart|logs]"
     exit 1
     ;;
 esac

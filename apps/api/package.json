@@ -1,0 +1,41 @@
+{
+  "name": "cosy-co-api",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "tsc --build --verbose && tsc-alias && pnpm copy",
+    "build:clean": "pnpm clean && tsc --build --verbose && tsc-alias",
+    "clean": "rimraf dist",
+    "copy": "copyfiles -u 1 ./src/constants/**/*.* ./dist/src",
+    "dev": "nodemon --watch src/** --ext ts,json --exec pnpm dev:exec",
+    "dev:exec": "pnpm build && pnpm start",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" && tsc --noEmit",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix && tsc --noEmit",
+    "migrate": "ts-node ./migrations/index.ts",
+    "start": "node dist/src/index.js"
+  },
+  "dependencies": {
+    "@slekup/utils": "^0.0.16",
+    "axios": "^1.4.0",
+    "colors": "^1.4.0",
+    "express": "^4.18.2",
+    "express-custom": "^0.1.8",
+    "helmet": "^7.0.0",
+    "hpp": "^0.2.3",
+    "mongoose": "^7.4.0",
+    "winston": "^3.10.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/hpp": "^0.2.2",
+    "@types/node": "^20.4.2",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.45.0",
+    "nodemon": "^3.0.1",
+    "rimraf": "^5.0.1",
+    "tsc-alias": "^1.8.7",
+    "typescipt": "^1.0.0"
+  }
+}

@@ -2,7 +2,6 @@ import colors from 'tailwindcss/colors';
 
 /** @type {import('tailwindcss').Config}*/
 const config = {
-  mode: 'jit',
   content: ['./src/**/*.{html,js,svelte,ts}'],
   darkMode: 'media',
   theme: {
