@@ -41,18 +41,18 @@
 <Meta title="Home" />
 
 <!-- Main banner section -->
-<div class="relative py-24 lg:py-32 xl:py-40 w-full">
+<div class="relative w-full py-24 lg:py-32 xl:py-40">
   <img
     src="/home/banner-1.jpg"
     alt="Home banner"
-    class="absolute top-0 left-0 w-full h-full object-cover"
+    class="absolute top-0 left-0 object-cover w-full h-full"
   />
-  <div class="max-w-7xl mx-auto w-10/12 text-white drop-shadow-lg">
-    <div class="max-w-2xl relative">
-      <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl">
+  <div class="w-10/12 mx-auto text-white max-w-7xl drop-shadow-lg">
+    <div class="relative max-w-2xl">
+      <h1 class="text-4xl font-extrabold sm:text-5xl lg:text-6xl">
         Embrace the Warmth,<br />Embrace Cosy Co!
       </h1>
-      <p class="lg:text-lg my-10">
+      <p class="my-10 lg:text-lg">
         Where comfort meets self-care. Discover our premium wheat bags and
         indulgent products designed to help you unwind, relax, and rejuvenate.
         Treat yourself to ultimate coziness and embrace a lifestyle of
@@ -65,18 +65,18 @@
 
 <!-- Wheat bags section -->
 <div
-  class="max-w-7xl mx-auto w-10/12 md:flex justify-center my-20 md:my-32 lg:my-40"
+  class="justify-center w-10/12 mx-auto my-20 max-w-7xl md:flex md:my-32 lg:my-40"
 >
   <div class="mr-5 lg:mr-10">
     <img
       src="/home/image-1.jpg"
       alt="Wheat bag"
-      class="min-w-20 min-h-20 max-w-20 max-h-20 md:max-w-60 md:max-h-60 md:min-w-60 md:min-h-60 lg:min-w-96 lg:min-h-96 lg:max-w-96 lg:max-h-96 object-cover mx-0 md:mx-0"
+      class="object-cover mx-0 min-w-20 min-h-20 max-w-20 max-h-20 md:max-w-60 md:max-h-60 md:min-w-60 md:min-h-60 lg:min-w-96 lg:min-h-96 lg:max-w-96 lg:max-h-96 md:mx-0"
     />
   </div>
-  <div class="ml-5 lg:ml-10 py-4 lg:py-12 max-w-lg mt-2 md:mt-0">
-    <h1 class="font-bold text-2xl">High Quality Wheat Bags</h1>
-    <div class="h-1 rounded-lg bg-secondary w-40 my-5" />
+  <div class="max-w-lg py-4 mt-2 ml-5 lg:ml-10 lg:py-12 md:mt-0">
+    <h1 class="text-2xl font-bold">High Quality Wheat Bags</h1>
+    <div class="w-40 h-1 my-5 rounded-lg bg-secondary" />
     <p class="text-sm">
       A natural remedy for soothing relief. Made from 100% linen, filled with
       treated wheat grains, it harnesses heat therapy to alleviate aches,
@@ -89,7 +89,7 @@
     <div class="mt-5">
       <div class="flex mt-2">
         <div class="p-1.5 bg-orange-600/20 h-6 w-6 rounded-3xl">
-          <Icon icon="mingcute:check-fill" class="h-3 w-3 text-orange-600" />
+          <Icon icon="mingcute:check-fill" class="w-3 h-3 text-orange-600" />
         </div>
         <p class="mt-0.5 ml-3 text-sm">
           100% linen, filled with treated wheat grains
@@ -97,13 +97,13 @@
       </div>
       <div class="flex mt-2">
         <div class="p-1.5 bg-orange-600/20 h-6 w-6 rounded-3xl">
-          <Icon icon="mingcute:check-fill" class="h-3 w-3 text-orange-600" />
+          <Icon icon="mingcute:check-fill" class="w-3 h-3 text-orange-600" />
         </div>
         <p class="mt-0.5 ml-3 text-sm">Easy to use and maintain</p>
       </div>
       <div class="flex mt-2">
         <div class="p-1.5 bg-orange-600/20 h-6 w-6 rounded-3xl">
-          <Icon icon="mingcute:check-fill" class="h-3 w-3 text-orange-600" />
+          <Icon icon="mingcute:check-fill" class="w-3 h-3 text-orange-600" />
         </div>
         <p class="mt-0.5 ml-3 text-sm">Completely natural ingredients</p>
       </div>
@@ -112,19 +112,19 @@
 </div>
 
 <!-- Feedback section -->
-<div class="max-w-7xl mx-auto w-10/12 my-20 md:my-32 lg:my-40">
-  <div class="text-center bg-default shadow-inner rounded-3xl p-5 sm:p-10">
-    <p class="text-rose-500 font-bold">Customer Love</p>
-    <h3 class="font-bold px-2 text-xl sm:text-3xl mt-2">
+<div class="w-10/12 mx-auto my-20 max-w-7xl md:my-32 lg:my-40">
+  <div class="p-5 text-center shadow-inner bg-default rounded-3xl sm:p-10">
+    <p class="font-bold text-rose-500">Customer Love</p>
+    <h3 class="px-2 mt-2 text-xl font-bold sm:text-3xl">
       Hear It From Our Customers
     </h3>
     <p
-      class="text-xs sm:text-sm max-w-md mx-auto text-text-secondary mt-2 sm:mt-5"
+      class="max-w-md mx-auto mt-2 text-xs sm:text-sm text-text-secondary sm:mt-5"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus amet
       quaerat libero modi. Minus amet quaerat libero modi.
     </p>
-    <div class="mt-5 sm:mt-10 text-left">
+    <div class="mt-5 text-left sm:mt-10">
       <Splide
         aria-label="Feedback"
         options={{
@@ -146,7 +146,7 @@
       >
         {#each feedbackData as feedback}
           <SplideSlide>
-            <div class="pb-8 h-full">
+            <div class="h-full pb-8">
               <Feedback {feedback} />
             </div>
           </SplideSlide>
