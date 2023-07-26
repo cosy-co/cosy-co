@@ -17,7 +17,7 @@ services:
 
   frontend:
     container_name: frontend
-    image: slekup/cosy-co:latest
+    image: slekup/cosy-co:main
     env_file:
       - .env
     restart: always
