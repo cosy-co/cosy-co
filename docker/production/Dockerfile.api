@@ -42,9 +42,9 @@ RUN adduser -S expressjs -u 1001 -G nodejs
 # Switch to the `expressjs` user
 USER expressjs
 # Copy the production-ready app from the previous stage to the container (deps + built files)
-COPY --from=BUILD_IMAGE --chown=expressjs:nodejs /app/apps/api/package.json ./
-COPY --from=BUILD_IMAGE --chown=expressjs:nodejs /app/apps/api/node_modules ./node_modules
-COPY --from=BUILD_IMAGE --chown=expressjs:nodejs /app/apps/api/dist ./dist
+COPY --from=installer --chown=expressjs:nodejs /app/apps/api/package.json ./
+COPY --from=installer --chown=expressjs:nodejs /app/apps/api/node_modules ./node_modules
+COPY --from=installer --chown=expressjs:nodejs /app/apps/api/dist ./dist
 # Expose port 5000
 EXPOSE 5000
 # Start the app on port 3000

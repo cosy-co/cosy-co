@@ -182,6 +182,9 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
 
   packages/eslint-config-custom:
     devDependencies:
@@ -238,6 +241,9 @@ importers:
       svelte:
         specifier: ^4.0.5
         version: 4.0.5
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
 
 packages:
 

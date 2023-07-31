@@ -25,7 +25,8 @@
   },
   "devDependencies": {
     "@types/node": "^20.4.2",
-    "eslint-config-custom": "workspace:*"
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
   },
   "publishConfig": {
     "access": "public"
