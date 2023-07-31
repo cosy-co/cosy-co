@@ -3,7 +3,7 @@
 # Function to update Docker images
 function update() {
   echo "Updating docker services..."
-  docker-compose -f "$COMPOSE_FILE" stop
+  docker-compose -f "$COMPOSE_FILE" down --rmi all
   git pull
   docker-compose -f "$COMPOSE_FILE" up --build -d
 }
@@ -14,15 +14,27 @@ function restart() {
   docker-compose -f "$COMPOSE_FILE" restart
 }
 
+# Function to stop Docker containers
+function stop() {
+  echo "Stopping docker services..."
+  docker-compose -f "$COMPOSE_FILE" down
+}
+
+# Function to start Docker containers
+function start() {
+  echo "Starting docker services..."
+  docker-compose -f "$COMPOSE_FILE" up -d
+}
+
 # Function to view Docker container logs
 function logs() {
   echo "Showing logs for docker services..."
-  docker-compose -f "$COMPOSE_FILE" logs -t -f
+  docker-compose -f "$COMPOSE_FILE" logs -t -f --tail 1000
 }
 
 # Check if the environment argument is specified
 if [ -z "$1" ]; then
-  echo "Usage: ./run.sh [prod|dev] [update|restart|logs]"
+  echo "Usage: ./run.sh [prod|dev] [update|restart|start|stop|logs]"
   exit 1
 fi
 
@@ -44,11 +56,17 @@ case "$2" in
   "restart")
     restart
     ;;
+  "start")
+    start
+    ;;
+  "stop")
+    stop
+    ;;
   "logs")
     logs
     ;;
   *)
-    echo "Usage: ./run.sh [prod|dev] [update|restart|logs]"
+    echo "Usage: ./run.sh [prod|dev] [update|restart|start|stop|logs]"
     exit 1
     ;;
 esac

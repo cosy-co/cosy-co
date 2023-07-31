@@ -48,6 +48,7 @@ COPY --from=installer --chown=svelte:nodejs /app/apps/web/package.json .
 COPY --from=installer --chown=svelte:nodejs /app/apps/web/postcss.config.js  .
 # Copy the production-ready app from the previous stage to the container (deps + built files)
 COPY --from=installer --chown=svelte:nodejs /app/apps/web/node_modules ./node_modules
+COPY --from=installer --chown=svelte:nodejs /app/apps/web/build ./build
 COPY --from=installer --chown=svelte:nodejs /app/apps/web/static ./static
 # Expose port 3000
 EXPOSE 3000
