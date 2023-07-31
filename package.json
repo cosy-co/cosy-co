@@ -9,7 +9,7 @@
     "format": "prettier --write .",
     "postinstall": "manypkg check",
     "preview": "dotenv -- turbo run preview --filter=web",
-    "start": "dotenv -- turbo run start --filter=web",
+    "start": "dotenv -- turbo run start",
     "publish-packages": "turbo run build lint && changeset version && changeset publish"
   },
   "packageManager": "pnpm@7.15.0",
@@ -20,11 +20,11 @@
   "dependencies": {
     "@manypkg/cli": "^0.21.0",
     "dotenv-cli": "^7.2.1",
-    "eslint": "^8.45.0",
-    "eslint-config-custom": "0.0.0",
+    "eslint": "^8.46.0",
+    "eslint-config-custom": "workspace:*",
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.10.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
-    "turbo": "^1.10.11"
+    "turbo": "^1.10.12"
   }
 }
