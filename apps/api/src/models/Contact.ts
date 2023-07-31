@@ -15,13 +15,7 @@ export const ContactModel = model<ContactDocument>(
   'Contact',
   new Schema<ContactSchema>(
     {
-      firstName: {
-        type: String,
-        required: true,
-        min: 2,
-        max: 100,
-      },
-      lastName: {
+      name: {
         type: String,
         required: true,
         min: 2,

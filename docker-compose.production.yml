@@ -1,19 +1,19 @@
 version: '3.3'
 services:
-  # backend:
-  #   container_name: backend
-  #   build:
-  #     context: .
-  #     dockerfile: ./apps/api/Dockerfile
-  #   env_file:
-  #     - .env.production
-  #   restart: always
-  #   environment:
-  #     NODE_ENV: production
-  #   ports:
-  #     - '5000:5000'
-  #   networks:
-  #     - app-network
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: slekup/cosy-co-api:main
+    env_file:
+      - .env.production
+    restart: always
+    environment:
+      NODE_ENV: production
+    ports:
+      - '5000:5000'
+    networks:
+      - app-network
 
   frontend:
     container_name: frontend

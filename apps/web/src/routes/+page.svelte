@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button, Feedback, Meta } from '@components/index';
   import Icon from '@iconify/svelte';
+  import { Button, Feedback, Meta } from '@lib/components/index';
 
   interface IFeedback {
     name: string;

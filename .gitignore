@@ -36,3 +36,4 @@ cosyco.crt
 cosyco.key
 
 dist/
+tmp/

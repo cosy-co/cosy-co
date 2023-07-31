@@ -1,6 +1,6 @@
 /* Write your global styles here, in PostCSS syntax */
 
-@import './styles/fonts/fonts.css';
+@import 'lib/styles/fonts/fonts.css';
 
 @tailwind base;
 @tailwind components;

@@ -1,5 +1,14 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "NODE_ENV",
+    "DEBUG",
+    "API_HTTP_PORT",
+    "API_URL",
+    "WEBSITE_URL",
+    "DISCORD_WEBHOOK_URL",
+    "MONGODB_URI"
+  ],
   "globalDependencies": ["**/.env.*local", "**/.env.*production"],
   "pipeline": {
     "build": {

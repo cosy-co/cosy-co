@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Footer, Header } from '@components/layout';
+  import { Footer, Header } from '@lib/components/layout';
 
   import '../app.css';
 </script>
