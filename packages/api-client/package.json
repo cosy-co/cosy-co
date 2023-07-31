@@ -3,10 +3,14 @@
   "version": "0.0.0",
   "description": "A client that allows the frontend to interact with the backend",
   "main": "index.js",
+  "scripts": {
+    "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint \".\""
+  },
   "dependencies": {
     "axios": "^1.4.0"
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*"
+    "eslint-config-custom": "workspace:*",
+    "typescript": "^5.1.6"
   }
 }
