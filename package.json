@@ -9,6 +9,7 @@
     "format": "prettier --write .",
     "postinstall": "manypkg check",
     "preview": "dotenv -- turbo run preview --filter=web",
+    "start": "dotenv -- turbo run start --filter=web",
     "publish-packages": "turbo run build lint && changeset version && changeset publish"
   },
   "packageManager": "pnpm@7.15.0",
