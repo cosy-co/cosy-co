@@ -152,6 +152,12 @@ importers:
         specifier: ^4.4.4
         version: 4.4.4
 
+  packages/api-client:
+    dependencies:
+      axios:
+        specifier: ^1.4.0
+        version: 1.4.0
+
   packages/eslint-config-custom:
     devDependencies:
       '@babel/eslint-parser':
