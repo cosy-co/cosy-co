@@ -9,13 +9,12 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
-    "dev": "turbo run dev",
+    "dev": "dotenv -e .env.local -- turbo run dev",
     "fix": "manypkg fix",
     "format": "prettier --write \"**/*.{ts,md,mdx,json}\" --ignore-path=.prettierignore",
     "postinstall": "manypkg check",
     "lint": "turbo run lint",
     "preview": "dotenv -- turbo run preview --filter=web",
-    "publish-packages": "turbo run build lint && changeset version && changeset publish",
     "start": "dotenv -- turbo run start"
   },
   "dependencies": {

@@ -11,7 +11,7 @@ const server = api.start(() => {
     colors.blue(
       `HTTP server running in ${colors.white(
         config.env.NODE_ENV
-      )} mode and Listening on port ${colors.white(config.env.PORT)}`
+      )} mode and Listening on port ${colors.white(config.env.API_HTTP_PORT)}`
     )
   );
 });
@@ -20,7 +20,9 @@ const server = api.start(() => {
 server.on('error', () => {
   logger.error(
     colors.red(
-      `Error starting http server on port ${colors.white(config.env.PORT)}`
+      `Error starting http server on port ${colors.white(
+        config.env.API_HTTP_PORT
+      )}`
     )
   );
 });
