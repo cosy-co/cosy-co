@@ -14,6 +14,18 @@ function restart() {
   docker-compose -f "$COMPOSE_FILE" restart
 }
 
+# Function to stop Docker containers
+function stop() {
+  echo "Stopping docker services..."
+  docker-compose -f "$COMPOSE_FILE" down
+}
+
+# Function to start Docker containers
+function start() {
+  echo "Starting docker services..."
+  docker-compose -f "$COMPOSE_FILE" up -d
+}
+
 # Function to view Docker container logs
 function logs() {
   echo "Showing logs for docker services..."
@@ -22,7 +34,7 @@ function logs() {
 
 # Check if the environment argument is specified
 if [ -z "$1" ]; then
-  echo "Usage: ./run.sh [prod|dev] [update|restart|logs]"
+  echo "Usage: ./run.sh [prod|dev] [update|restart|start|stop|logs]"
   exit 1
 fi
 
@@ -44,11 +56,17 @@ case "$2" in
   "restart")
     restart
     ;;
+  "start")
+    start
+    ;;
+  "stop")
+    stop
+    ;;
   "logs")
     logs
     ;;
   *)
-    echo "Usage: ./run.sh [prod|dev] [update|restart|logs]"
+    echo "Usage: ./run.sh [prod|dev] [update|restart|start|stop|logs]"
     exit 1
     ;;
 esac
