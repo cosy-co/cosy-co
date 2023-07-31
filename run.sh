@@ -3,7 +3,7 @@
 # Function to update Docker images
 function update() {
   echo "Updating docker services..."
-  docker-compose -f "$COMPOSE_FILE" stop
+  docker-compose -f "$COMPOSE_FILE" down --rmi all
   git pull
   docker-compose -f "$COMPOSE_FILE" up --build -d
 }
@@ -17,7 +17,7 @@ function restart() {
 # Function to view Docker container logs
 function logs() {
   echo "Showing logs for docker services..."
-  docker-compose -f "$COMPOSE_FILE" logs -t -f
+  docker-compose -f "$COMPOSE_FILE" logs -t -f --tail 1000
 }
 
 # Check if the environment argument is specified
