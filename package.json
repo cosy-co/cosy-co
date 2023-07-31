@@ -1,24 +1,24 @@
 {
   "name": "cosy-co",
-  "license": "CC-BY-NC-SA-4.0",
   "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write .",
-    "postinstall": "manypkg check",
-    "preview": "dotenv -- turbo run preview --filter=web",
-    "start": "dotenv -- turbo run start",
-    "publish-packages": "turbo run build lint && changeset version && changeset publish"
-  },
-  "packageManager": "pnpm@7.15.0",
+  "license": "CC-BY-NC-SA-4.0",
   "workspaces": [
     "packages/*",
     "apps/*"
   ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "fix": "manypkg fix",
+    "format": "prettier --write .",
+    "postinstall": "manypkg check",
+    "lint": "turbo run lint",
+    "preview": "dotenv -- turbo run preview --filter=web",
+    "publish-packages": "turbo run build lint && changeset version && changeset publish",
+    "start": "dotenv -- turbo run start"
+  },
   "dependencies": {
-    "@manypkg/cli": "^0.21.0",
+    "@manypkg/cli": "latest",
     "dotenv-cli": "^7.2.1",
     "eslint": "^8.46.0",
     "eslint-config-custom": "workspace:*",
@@ -26,5 +26,11 @@
     "prettier-plugin-svelte": "^2.10.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "turbo": "^1.10.12"
+  },
+  "packageManager": "pnpm@7.15.0",
+  "manypkg": {
+    "ignoredRules": [
+      "INTERNAL_MISMATCH"
+    ]
   }
 }

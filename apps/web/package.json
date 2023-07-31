@@ -3,20 +3,20 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prepare": "svelte-kit sync",
-    "dev": "vite dev --port 3000 --open",
     "build": "vite build",
-    "package": "vite package",
-    "preview": "vite preview",
-    "start": "node ./build/index.js",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "dev": "vite dev --port 3000 --open",
+    "format": "prettier --write --ignore-path=../../.prettierignore .",
     "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint \"src\"",
-    "format": "prettier --write --ignore-path=../../.prettierignore ."
+    "package": "vite package",
+    "prepare": "svelte-kit sync",
+    "preview": "vite preview",
+    "start": "node ./build/index.js"
   },
   "dependencies": {
-    "@cosy-co/ui": "workspace:*",
     "@cosy-co/api-client": "workspace:*",
+    "@cosy-co/ui": "workspace:*",
     "@splidejs/svelte-splide": "^0.2.9",
     "axios": "^1.4.0"
   },

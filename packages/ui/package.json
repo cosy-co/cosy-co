@@ -4,11 +4,11 @@
   "description": "Styles and components for use in svelte websites",
   "type": "module",
   "main": "index.js",
-  "module": "./index.ts",
   "svelte": "./index.ts",
+  "module": "./index.ts",
   "scripts": {
-    "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint \".\"",
-    "format": "prettier --write --ignore-path=../../.prettierignore ."
+    "format": "prettier --write --ignore-path=../../.prettierignore .",
+    "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint \".\""
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
