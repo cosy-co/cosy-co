@@ -3,14 +3,15 @@
   "private": true,
   "license": "CC-BY-NC-SA-4.0",
   "workspaces": [
-    "packages/*",
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
+    "clean": "turbo run clean",
     "dev": "turbo run dev",
     "fix": "manypkg fix",
-    "format": "prettier --write \"**/*.{ts,tsx,md,mdx,json}\"",
+    "format": "prettier --write \"**/*.{ts,md,mdx,json}\" --ignore-path=.prettierignore",
     "postinstall": "manypkg check",
     "lint": "turbo run lint",
     "preview": "dotenv -- turbo run preview --filter=web",
@@ -25,9 +26,9 @@
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.10.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
-    "turbo": "^1.10.12"
+    "turbo": "latest"
   },
-  "packageManager": "pnpm@8.6.6",
+  "packageManager": "pnpm@8.6.10",
   "manypkg": {
     "ignoredRules": [
       "INTERNAL_MISMATCH"

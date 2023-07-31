@@ -4,6 +4,7 @@ module.exports = {
   root: true,
   extends: ['custom'],
   parserOptions: {
+    project: [path.resolve(__dirname, './tsconfig.json')],
     tsconfigRootDir: __dirname,
   },
   settings: {

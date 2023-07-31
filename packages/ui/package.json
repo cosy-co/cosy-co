@@ -7,8 +7,7 @@
   "svelte": "./index.ts",
   "module": "./index.ts",
   "scripts": {
-    "format": "prettier --write --ignore-path=../../.prettierignore .",
-    "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint \".\""
+    "lint": "eslint \"src\""
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
