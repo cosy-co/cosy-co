@@ -15,7 +15,7 @@ jobs:
       - name: Build the Docker image
 
         run: |
-          touch .env 
+          touch .env.local
           docker-compose -f docker-compose.development.yml build --no-cache --force-rm frontend
 
   test:
@@ -27,7 +27,7 @@ jobs:
 
       - name: Test the Docker image
         run: |
-          touch .env
+          touch .env.local
           docker-compose -f docker-compose.development.yml up -d frontend
 
   push_to_registry:
