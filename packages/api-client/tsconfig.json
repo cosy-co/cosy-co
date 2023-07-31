@@ -1,0 +1,6 @@
+{
+  "extends": "../tsconfig/base.json",
+  "compilerOptions": {},
+  "include": ["src", "**/*.ts", "../../environment.d.ts"],
+  "exclude": ["dist", "build", "node_modules", "**/*.spec.ts"]
+}

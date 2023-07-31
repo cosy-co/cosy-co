@@ -6,20 +6,19 @@ on:
 
 jobs:
   build:
-    name: Build Docker image
+    name: Build Docker images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Build the Docker image
-
+      - name: Build the Docker images
         run: |
           touch .env.local
-          docker-compose -f docker-compose.development.yml build --no-cache --force-rm frontend
+          docker-compose -f docker-compose.development.yml build --no-cache --force-rm
 
   test:
-    name: Test Docker image
+    name: Test Docker images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,7 +27,7 @@ jobs:
       - name: Test the Docker image
         run: |
           touch .env.local
-          docker-compose -f docker-compose.development.yml up -d frontend
+          docker-compose -f docker-compose.development.yml up -d
 
   push_to_registry:
     name: Publish - Docker Hub
@@ -47,17 +46,48 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Extract metadata (tags, labels) for Docker
-        id: meta
+        id: meta_web
         uses: docker/metadata-action@v4
         with:
           images: docker.io/slekup/cosy-co
 
-      - name: Publish to Docker Hub
+      - name: Publish Web App
         uses: docker/build-push-action@v4
         with:
           context: .
           file: ./docker/production/Dockerfile.web
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta_web.outputs.tags }}
+          labels: ${{ steps.meta_web.outputs.labels }}
           platforms: linux/amd64,linux/arm64
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta_api
+        uses: docker/metadata-action@v4
+        with:
+          images: docker.io/slekup/cosy-co
+
+      - name: Publish API
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./docker/production/Dockerfile.api
+          push: true
+          tags: ${{ steps.meta_api.outputs.tags }}
+          labels: ${{ steps.meta_api.outputs.labels }}
+          platforms: linux/amd64,linux/arm64
+
+  deploy:
+    name: Deploy to Server
+    runs-on: ubuntu-latest
+    needs: push_to_registry
+    steps:
+      - name: Install SSH Keys
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+      - name: Connect and Deploy
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && ./run.sh prod update && exit"
+      - name: Cleanup
+        run: rm -rf ~/.ssh

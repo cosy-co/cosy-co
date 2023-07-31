@@ -1,5 +1,7 @@
+import axios from 'axios';
 import { Endpoint } from 'express-custom';
 
+import config from '@/config';
 import { ContactModel } from '@/models/Contact';
 
 export const contactSubmission = new Endpoint({
@@ -11,13 +13,7 @@ export const contactSubmission = new Endpoint({
   .setBodySchema((schema) =>
     schema
       .addString({
-        name: 'firstName',
-        required: true,
-        min: 3,
-        max: 50,
-      })
-      .addString({
-        name: 'lastName',
+        name: 'name',
         required: true,
         min: 3,
         max: 50,
@@ -31,7 +27,7 @@ export const contactSubmission = new Endpoint({
       })
       .addString({
         name: 'phone',
-        required: true,
+        required: false,
         min: 5,
         max: 12,
       })
@@ -39,23 +35,21 @@ export const contactSubmission = new Endpoint({
         name: 'message',
         required: true,
         min: 3,
-        max: 500,
+        max: 1000,
       })
   )
   .setController<{
     body: {
-      firstName: string;
-      lastName: string;
+      name: string;
       email: string;
       phone: string;
       message: string;
     };
   }>(async (req, res) => {
-    const { firstName, lastName, email, phone, message } = req.body;
+    const { name, email, phone, message } = req.body;
 
     const contact = new ContactModel({
-      firstName,
-      lastName,
+      name,
       email,
       phone,
       message,
@@ -74,4 +68,9 @@ export const contactSubmission = new Endpoint({
         message: 'An error occurred while submitting your contact form.',
       });
     }
+
+    // Send message to Discord
+    axios.post(config.env.DISCORD_WEBHOOK_URL, {
+      content: `**New Contact Form Submission**\n\n**Name:** ${name}\n**Email:** ${email}\n**Phone:** ${phone}\n**Message:** ${message}`,
+    });
   });

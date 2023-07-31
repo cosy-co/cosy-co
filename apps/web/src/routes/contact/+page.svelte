@@ -1,14 +1,32 @@
 <script lang="ts">
-  import { Button, Meta } from '@components/index';
   import Icon from '@iconify/svelte';
+  import { Button, Meta } from '@lib/components/index';
+  import api from '@lib/utils/api';
 
   const baseInputStyle =
     'block w-full bg-black/30 hover:bg-black/30 focus:bg-black/50 border-transparent p-3 rounded-md focus:ring text-white transition duration-200 border border-border focus:border-secondary ring-secondary/40';
 
-  const onSubmit = (event: Event) => {
+  let name = '';
+  let email = '';
+  let phone = '';
+  let message = '';
+
+  const onSubmit = async (event: Event) => {
     event.preventDefault();
 
-    alert('Message sent!');
+    try {
+      await api.submitContactForm({
+        name,
+        email,
+        phone,
+        message,
+      });
+
+      alert('success');
+    } catch (error) {
+      console.error(error);
+      alert('error');
+    }
   };
 </script>
 
@@ -17,29 +35,33 @@
 <div class="2xl:py-32 lg:py-20 xl:py-32 p-0 bg-[url(/contact/background.jpg)]">
   <div class="max-w-5xl mx-auto lg:w-11/12 md:flex lg:rounded-3xl">
     <div
-      class="md:w-1/3 px-10 md:px-5 lg:px-10 py-10 md:py-20 bg-black/40 backdrop-blur-md lg:rounded-l-md text-white"
+      class="px-10 py-10 text-white md:w-1/3 md:px-5 lg:px-10 md:py-20 bg-black/40 backdrop-blur-md lg:rounded-l-md"
     >
-      <h3 class="font-bold text-2xl">Contact Us</h3>
-      <div class="mt-5 flex">
-        <div class="rounded-3xl bg-black/30 p-2 mr-3 h-9 w-9">
+      <h3 class="text-2xl font-bold">Contact Us</h3>
+      <!-- <div class="flex mt-5">
+        <div class="p-2 mr-3 rounded-3xl bg-black/30 h-9 w-9">
           <Icon icon="mdi:phone" class="w-5 h-5" />
         </div>
         <p class="mt-1.5"><b>Phone:</b> +64 27 000 000</p>
-      </div>
-      <div class="mt-5 flex">
-        <div class="rounded-3xl bg-black/30 p-2 mr-3 h-9 w-9">
-          <Icon icon="eva:email-outline" class="h-5 w-5" />
+      </div> -->
+
+      <div class="flex mt-5">
+        <div class="p-2 mr-3 rounded-3xl bg-black/30 h-9 w-9">
+          <Icon icon="eva:email-outline" class="w-5 h-5" />
         </div>
         <p class="mt-1.5">
           <b>Email:</b>
-          <a href="mailto:business@cosyco.nz" class="hover:underline"
-            >business@cosyco.nz</a
+          <a
+            href="mailto:slekupvimplyrataqq@protonmail.com"
+            class="break-all hover:underline"
+            >slekupvimplyrataqq@protonmail.com</a
           >
         </p>
       </div>
-      <div class="mt-5 flex">
-        <div class="rounded-3xl bg-black/30 p-2 mr-3 h-9 w-9">
-          <Icon icon="gg:website" class="h-5 w-5" />
+
+      <div class="flex mt-5">
+        <div class="p-2 mr-3 rounded-3xl bg-black/30 h-9 w-9">
+          <Icon icon="gg:website" class="w-5 h-5" />
         </div>
         <p class="mt-1.5">
           <b>Website:</b> <a href="/" class="hover:underline">cosyco.nz</a>
@@ -48,9 +70,9 @@
     </div>
 
     <div
-      class="md:w-2/3 px-10 pt-20 pb-16 lg:rounded-r-md bg-black/20 backdrop-blur-md"
+      class="px-10 pt-20 pb-16 md:w-2/3 lg:rounded-r-md bg-black/20 backdrop-blur-md"
     >
-      <h3 class="font-bold text-white text-2xl">Get In Touch</h3>
+      <h3 class="text-2xl font-bold text-white">Get In Touch</h3>
       <form class="mt-5" on:submit={onSubmit}>
         <input
           type="text"
@@ -61,18 +83,34 @@
           minlength="3"
           required={true}
           class={`${baseInputStyle} mt-5`}
+          bind:value={name}
         />
 
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email Address"
-          maxlength="100"
-          minlength="3"
-          required={true}
-          class={`${baseInputStyle} mt-5`}
-        />
+        <div class="flex">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email Address"
+            maxlength="100"
+            minlength="3"
+            required={true}
+            class={`${baseInputStyle} mt-5 mr-2.5`}
+            bind:value={email}
+          />
+
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="Phone Number"
+            maxlength="12"
+            minlength="5"
+            required={false}
+            class={`${baseInputStyle} mt-5 ml-2.5`}
+            bind:value={phone}
+          />
+        </div>
 
         <textarea
           id="message"
@@ -83,6 +121,7 @@
           rows="5"
           required={true}
           class={`${baseInputStyle} mt-5`}
+          bind:value={message}
         />
 
         <div class="mt-8">

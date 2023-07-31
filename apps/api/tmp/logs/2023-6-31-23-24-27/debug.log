@@ -1,0 +1,2 @@
+{"level":"info","message":"HTTP server running in development mode and Listening on port 5000","ms":"+0ms","timestamp":"2023-07-31T11:24:28.458Z"}
+{"level":"info","message":"Connected to MongoDB database cosy-co","ms":"+54ms","timestamp":"2023-07-31T11:24:28.509Z"}

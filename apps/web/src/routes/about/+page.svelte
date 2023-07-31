@@ -1,25 +1,25 @@
 <script>
-  import { Meta } from '@components/index';
+  import { Meta } from '@lib/components/index';
 </script>
 
 <Meta title="About Us" />
 
-<div class="h-72 sm:h-80 top-0 left-0 w-full bg-default-hover absolute" />
+<div class="absolute top-0 left-0 w-full h-72 sm:h-80 bg-default-hover" />
 
 <div
-  class="mb-20 pt-10 sm:pt-16 max-w-xl mx-auto text-text-secondary text-lg w-11/12 relative"
+  class="relative w-11/12 max-w-xl pt-10 mx-auto mb-20 text-lg sm:pt-16 text-text-secondary"
 >
-  <h1 class="text-center text-primary text-4xl mb-8 sm:mb-12 font-bold">
+  <h1 class="mb-8 text-4xl font-bold text-center text-primary sm:mb-12">
     About Us
   </h1>
 
   <img
     src="/about/cover.jpg"
     alt="About cover"
-    class=" object-cover w-full max-h-80"
+    class="object-cover w-full max-h-80"
   />
 
-  <div class="mt-8 sm:mt-16 text-sm">
+  <div class="mt-8 text-sm sm:mt-16">
     <p class="my-5">
       Cosy Co is a unique business venture born out of our desire to create
       products that enhance comfort and well-being. With our flagship product,

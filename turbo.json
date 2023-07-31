@@ -1,22 +1,35 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "NODE_ENV",
+    "DEBUG",
+    "API_HTTP_PORT",
+    "API_URL",
+    "WEBSITE_URL",
+    "DISCORD_WEBHOOK_URL",
+    "MONGODB_URI"
+  ],
+  "globalDependencies": ["**/.env.*local", "**/.env.*production"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".svelte-kit/**", ".vercel/**"]
+      "outputs": [".svelte-kit/**", "dist/**", "build/**"]
     },
-    "lint": {},
+    "lint": { "dependsOn": ["^build"] },
     "preview": {
       "cache": false,
       "persistent": true
     },
     "start": {
       "dependsOn": ["^build"],
-      "outputs": [".svelte-kit/**", ".vercel/**"]
+      "outputs": [".svelte-kit/**"]
     },
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "clean": {
+      "cache": false
     }
   }
 }

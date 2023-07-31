@@ -4,15 +4,13 @@
   "description": "Styles and components for use in svelte websites",
   "type": "module",
   "main": "index.js",
-  "module": "./index.ts",
   "svelte": "./index.ts",
-  "license": "MIT",
+  "module": "./index.ts",
   "scripts": {
-    "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint \".\"",
-    "format": "prettier --write --ignore-path=../../.prettierignore ."
+    "lint": "eslint \"src\""
   },
   "devDependencies": {
-    "eslint-config-custom": "0.0.0",
+    "eslint-config-custom": "workspace:*",
     "svelte": "^4.0.5"
   }
 }

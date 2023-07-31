@@ -23,7 +23,7 @@ function stop() {
 # Function to start Docker containers
 function start() {
   echo "Starting docker services..."
-  docker-compose -f "$COMPOSE_FILE" up -d
+  docker-compose -f "$COMPOSE_FILE" up --build -d
 }
 
 # Function to view Docker container logs
