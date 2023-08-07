@@ -71,6 +71,16 @@ export const contactSubmission = new Endpoint({
 
     // Send message to Discord
     axios.post(config.env.DISCORD_WEBHOOK_URL, {
-      content: `**New Contact Form Submission**\n\n**Name:** ${name}\n**Email:** ${email}\n**Phone:** ${phone}\n**Message:** ${message}`,
+      embeds: [
+        {
+          title: 'New Contact Form Submission',
+          description: `
+          **Name:** ${name}
+          **Email:** ${email}
+          **Phone:** ${phone}
+          **Timestamp:** <t:${(Date.now() / 1000).toFixed(0)}:R>
+          **Message:** \`\`\`\n${message}\`\`\``,
+        },
+      ],
     });
   });

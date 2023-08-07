@@ -1,6 +1,7 @@
 <script lang="ts">
   import Icon from '@iconify/svelte';
   import { Button, Meta } from '@lib/components/index';
+  import { info } from '@lib/constants';
   import api from '@lib/utils/api';
 
   const baseInputStyle =
@@ -9,7 +10,8 @@
   let name = '';
   let email = '';
   let phone = '';
-  let message = '';
+  let message =
+    'Hi Cosy Co,\nI would like to order a wheatbag.\n\nSize: Small/Medium/Large\nQuantity: 1/2/Custom\nI would like to choose the design: Yes/No';
 
   const onSubmit = async (event: Event) => {
     event.preventDefault();
@@ -51,10 +53,8 @@
         </div>
         <p class="mt-1.5">
           <b>Email:</b>
-          <a
-            href="mailto:slekupvimplyrataqq@protonmail.com"
-            class="break-all hover:underline"
-            >slekupvimplyrataqq@protonmail.com</a
+          <a href={`mailto:${info.email}`} class="break-all hover:underline"
+            >{info.email}</a
           >
         </p>
       </div>
@@ -118,7 +118,7 @@
           placeholder="Your message..."
           maxlength="500"
           minlength="10"
-          rows="5"
+          rows="6"
           required={true}
           class={`${baseInputStyle} mt-5`}
           bind:value={message}
