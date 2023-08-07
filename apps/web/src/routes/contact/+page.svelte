@@ -24,10 +24,10 @@
         message,
       });
 
-      alert('success');
+      alert('Your form was submitted successfully!');
     } catch (error) {
       console.error(error);
-      alert('error');
+      alert('An error occured! Please try refreshing the page.');
     }
   };
 </script>

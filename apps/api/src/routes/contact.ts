@@ -3,6 +3,7 @@ import { Endpoint } from 'express-custom';
 
 import config from '@/config';
 import { ContactModel } from '@/models/Contact';
+import logger from '@/utils/logger';
 
 export const contactSubmission = new Endpoint({
   name: 'Contact Submission',
@@ -70,17 +71,20 @@ export const contactSubmission = new Endpoint({
     }
 
     // Send message to Discord
-    axios.post(config.env.DISCORD_WEBHOOK_URL, {
-      embeds: [
-        {
-          title: 'New Contact Form Submission',
-          description: `
+    axios
+      .post(config.env.DISCORD_WEBHOOK_URL, {
+        embeds: [
+          {
+            title: 'New Contact Form Submission',
+            description: `
           **Name:** ${name}
           **Email:** ${email}
           **Phone:** ${phone}
           **Timestamp:** <t:${(Date.now() / 1000).toFixed(0)}:R>
           **Message:** \`\`\`\n${message}\`\`\``,
-        },
-      ],
-    });
+            color: 0x72fc75,
+          },
+        ],
+      })
+      .catch(logger.error);
   });
