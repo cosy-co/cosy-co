@@ -49,7 +49,7 @@ jobs:
         id: meta_web
         uses: docker/metadata-action@v4
         with:
-          images: docker.io/slekup/cosy-co
+          images: docker.io/slekup/cosy-co-web
 
       - name: Publish Web App
         uses: docker/build-push-action@v4
@@ -65,7 +65,7 @@ jobs:
         id: meta_api
         uses: docker/metadata-action@v4
         with:
-          images: docker.io/slekup/cosy-co
+          images: docker.io/slekup/cosy-co-api
 
       - name: Publish API
         uses: docker/build-push-action@v4
