@@ -25,9 +25,6 @@ COPY .gitignore .gitignore
 # Install the dependencies
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-RUN touch .env.local
-RUN echo "PUBLIC_API_URL=http://localhost:5000/api" >> .env.local
-RUN echo "PUBLIC_WEBSITE_URL=http://localhost:3000" >> .env.local
 RUN pnpm install
 # Build the project
 COPY --from=builder /app/out/full/ .
