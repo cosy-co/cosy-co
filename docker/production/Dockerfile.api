@@ -12,6 +12,7 @@ WORKDIR /app
 COPY . .
 RUN npm install -g turbo
 RUN turbo prune --scope=api --docker
+COPY ./apps/api/tsconfig.json ./out/json/apps/api/tsconfig.json
 
 
 # Install dependencies
@@ -42,9 +43,12 @@ RUN adduser -S expressjs -u 1001 -G nodejs
 # Switch to the `expressjs` user
 USER expressjs
 # Copy the production-ready app from the previous stage to the container (deps + built files)
-COPY --from=installer --chown=expressjs:nodejs /app/apps/api/package.json ./
-COPY --from=installer --chown=expressjs:nodejs /app/apps/api/node_modules ./node_modules
-COPY --from=installer --chown=expressjs:nodejs /app/apps/api/dist ./dist
+COPY --from=installer --chown=expressjs:nodejs /app/node_modules ./node_modules
+COPY --from=installer --chown=expressjs:nodejs /app/apps/api/package.json ./apps/api/package.json
+COPY --from=installer --chown=expressjs:nodejs /app/apps/api/node_modules ./apps/api/node_modules
+COPY --from=installer --chown=expressjs:nodejs /app/apps/api/dist ./apps/api/dist
+# Set the working directory to /app/apps/api
+WORKDIR /app/apps/api
 # Expose port 5000
 EXPOSE 5000
 # Start the app on port 3000
