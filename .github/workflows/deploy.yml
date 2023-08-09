@@ -49,7 +49,7 @@ jobs:
         id: meta_web
         uses: docker/metadata-action@v4
         with:
-          images: docker.io/slekup/cosy-co
+          images: docker.io/slekup/cosy-co-web
 
       - name: Publish Web App
         uses: docker/build-push-action@v4
@@ -65,7 +65,7 @@ jobs:
         id: meta_api
         uses: docker/metadata-action@v4
         with:
-          images: docker.io/slekup/cosy-co
+          images: docker.io/slekup/cosy-co-api
 
       - name: Publish API
         uses: docker/build-push-action@v4
@@ -88,6 +88,6 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
       - name: Connect and Deploy
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && ./run.sh prod update && exit"
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && chmod +x run.sh && ./run.sh prod update && exit"
       - name: Cleanup
         run: rm -rf ~/.ssh

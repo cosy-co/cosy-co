@@ -2,9 +2,7 @@ version: '3.3'
 services:
   backend:
     container_name: backend
-    build:
-      context: .
-      dockerfile: slekup/cosy-co-api:main
+    image: slekup/cosy-co-api:main
     env_file:
       - .env.production
     restart: always
@@ -17,14 +15,14 @@ services:
 
   frontend:
     container_name: frontend
-    image: slekup/cosy-co:main
+    image: slekup/cosy-co-web:main
     env_file:
       - .env.production
     restart: always
     ports:
       - '3000:3000'
-    # depends_on:
-    #   - backend
+    depends_on:
+      - backend
     networks:
       - app-network
 
@@ -38,7 +36,7 @@ services:
       - '443:443'
       - '80:80'
     depends_on:
-      # - backend
+      - backend
       - frontend
     networks:
       - app-network
