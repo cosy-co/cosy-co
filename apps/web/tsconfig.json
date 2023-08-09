@@ -14,5 +14,6 @@
       "@lib": ["src/lib"],
       "@lib/*": ["src/lib/*"]
     }
-  }
+  },
+  "include": ["../../environment.d.ts"]
 }
