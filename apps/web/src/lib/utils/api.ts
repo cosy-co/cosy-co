@@ -1,7 +1,7 @@
 import { Client } from '@cosy-co/api-client';
 
 const api = new Client({
-  apiUrl: 'http://localhost:5000/api',
+  apiUrl: process.env.API_URL,
 });
 
 export default api;
