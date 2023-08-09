@@ -5,8 +5,8 @@ declare global {
       DEBUG: string;
 
       API_HTTP_PORT: string;
-      API_URL: string;
-      WEBSITE_URL: string;
+      PUBLIC_API_URL: string;
+      PUBLIC_WEBSITE_URL: string;
       DISCORD_WEBHOOK_URL: string;
 
       MONGODB_URI: string;

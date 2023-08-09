@@ -4,8 +4,8 @@
     "NODE_ENV",
     "DEBUG",
     "API_HTTP_PORT",
-    "API_URL",
-    "WEBSITE_URL",
+    "PUBLIC_API_URL",
+    "PUBLIC_WEBSITE_URL",
     "DISCORD_WEBHOOK_URL",
     "MONGODB_URI"
   ],
@@ -15,7 +15,7 @@
       "dependsOn": ["^build"],
       "outputs": [".svelte-kit/**", "dist/**", "build/**"]
     },
-    "lint": { "dependsOn": ["^build"] },
+    "lint": { "dependsOn": ["^build"], "cache": false, "persistent": true },
     "preview": {
       "cache": false,
       "persistent": true
