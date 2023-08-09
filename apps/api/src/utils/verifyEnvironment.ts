@@ -5,8 +5,8 @@ const newEnv = verifyEnvironment([
   'DEBUG',
 
   'API_HTTP_PORT',
-  'API_URL',
-  'WEBSITE_URL',
+  'PUBLIC_API_URL',
+  'PUBLIC_WEBSITE_URL',
   'DISCORD_WEBHOOK_URL',
 
   'MONGODB_URI',

@@ -19,6 +19,9 @@ const config = {
       '@lib': './src/lib',
       '@lib/*': './src/lib/*',
     },
+    env: {
+      dir: '../..',
+    },
   },
 };
 

@@ -1,7 +1,9 @@
 import { Client } from '@cosy-co/api-client';
 
+import { PUBLIC_API_URL } from '$env/static/public';
+
 const api = new Client({
-  apiUrl: process.env.API_URL,
+  apiUrl: PUBLIC_API_URL,
 });
 
 export default api;
