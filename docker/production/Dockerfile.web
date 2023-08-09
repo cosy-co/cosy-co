@@ -13,8 +13,6 @@ COPY . .
 RUN npm install -g turbo
 RUN turbo prune --scope=web --docker
 COPY ./apps/web/svelte.config.js ./out/json/apps/web/svelte.config.js
-COPY ./apps/web/tailwind.config.js ./out/json/apps/web/tailwind.config.js
-COPY ./apps/web/postcss.config.js ./out/json/apps/web/postcss.config.js
 
 
 # Install dependencies
@@ -27,6 +25,9 @@ COPY .gitignore .gitignore
 # Install the dependencies
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+RUN touch .env.local
+RUN echo "PUBLIC_API_URL=http://localhost:5000/api" >> .env.local
+RUN echo "PUBLIC_WEBSITE_URL=http://localhost:3000" >> .env.local
 RUN pnpm install
 # Build the project
 COPY --from=builder /app/out/full/ .
