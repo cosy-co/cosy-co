@@ -1,4 +1,5 @@
 name: Tests
+
 on:
   push:
     branches: ['**']
@@ -36,12 +37,6 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-
-      - name: Setup Environment
-        run: |
-          touch .env.local
-          echo "PUBLIC_API_URL=http://localhost:5000/api" >> .env.local
-          echo "PUBLIC_WEBSITE_URL=http://localhost:3000" >> .env.local
 
       - name: Install dependencies
         run: pnpm install
