@@ -17,7 +17,7 @@
     "@cosy-co/api-client": "workspace:*",
     "@cosy-co/ui": "workspace:*",
     "@splidejs/svelte-splide": "^0.2.9",
-    "axios": "^1.4.0"
+    "axios": "^1.6.0"
   },
   "devDependencies": {
     "@iconify/svelte": "^3.1.4",
